@@ -1,0 +1,17 @@
+.footer{
+  display: flex;
+  justify-content: center;
+  background: #FFFFFF;
+  width: 100%;
+
+}
+.footer__wrapper{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #03045E;
+}

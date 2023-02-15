@@ -1,0 +1,19 @@
+.dashboard {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: darken(#F7F8FD, 3%);
+  padding: 15px 15px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #03045E;
+  transition: 0.3s ease-in fill;
+  &:hover{
+    fill: rgba(3, 4, 94, 0.7);
+  }
+}
