@@ -1,19 +1,55 @@
+@import "../../../scss/variables";
+
 .dashboard {
+  position: relative;
   display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: baseline;
   background: darken(#F7F8FD, 3%);
   padding: 15px 15px;
   border-radius: 3px;
   margin-bottom: 20px;
 }
-button{
+
+button {
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: #03045E;
+  fill: $main_blue;
   transition: 0.3s ease-in fill;
-  &:hover{
+
+  &:hover {
     fill: rgba(3, 4, 94, 0.7);
   }
+}
+
+.file-name-form {
+  align-self: center;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 30px);
+  max-width: 400px;
+
+}
+
+.file-name-input {
+  padding-right: 40px !important;
+
+}
+
+.file-name-button {
+  position: absolute;
+  right: 0;
+  background: transparent !important;
+  border: none !important;
+  font-size: 22px;
+  font-weight: 700;
+  color: $main_blue;
+  transition: color 0.3s ease-in;
+}
+
+.file-name-button:hover {
+  color: rgba(3, 4, 94, 0.66);
+
 }

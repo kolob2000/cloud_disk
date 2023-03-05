@@ -1,0 +1,10 @@
+@import "../../../scss/variables";
+
+.textInput {
+  width: 100%;
+  background: #F7F8FD;
+}
+
+.textInput:focus {
+  border-color: $main_blue_focus !important;
+}

@@ -11,10 +11,11 @@ export const Header = () => {
             </div>
             <div className={style.header__right}>
                 <ul className={style.header__menu}>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Сервис</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><Link to={'/'}>Главная</Link></li>
+                    <li><Link to={'/about'}>О нас</Link></li>
+                    <li><Link to={'/services'}>Сервис</Link></li>
+                    <li><Link to={'/prices'}>Цены</Link></li>
+                    <li><Link to={'/contacts'}>Контакты</Link></li>
                 </ul>
                 <button className={style.login__button}>Войти</button>
             </div>

@@ -1,7 +1,24 @@
+@import "../../../scss/variables";
+
+
+.back {
+  a {
+    display: flex;
+    margin-left: 8px;
+    align-items: center;
+    gap: 16px;
+  }
+
+  span {
+ font-size: 35px;
+  }
+}
+
 .file__item {
   display: flex;
   gap: 15px;
   align-items: baseline;
+
 
   input[type='checkbox'] {
     opacity: 0;
@@ -16,9 +33,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #03045E;
+    width: 24px;
+    height: 24px;
+    border: 3px solid $main_blue;
     border-radius: 3px;
   }
 
@@ -28,12 +45,12 @@
     content: '\2713';
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     font-size: 20px !important;
     font-weight: 600;
     color: #ffffff !important;
-    background: #03045E;
+    background: $main_blue;
     border-radius: 3px;
   }
 }
@@ -41,7 +58,7 @@
 .file {
   display: flex;
   padding: 5px 8px;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
   margin-bottom: 10px;
   font-weight: 400;

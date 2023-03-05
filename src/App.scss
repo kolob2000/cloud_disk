@@ -1,3 +1,5 @@
+@import "./scss/variables";
+
 .app {
   align-items: center;
   display: flex;
@@ -10,4 +12,15 @@
 .wrapper {
   width: 100%;
   max-width: 1280px;
+  @media screen and (max-width: 1320px) {
+    max-width: 1024px;
+  }
+  @media screen and (max-width: 1064px) {
+    max-width: 768px;
+  }
+  @media screen and (max-width: 788px) {
+    max-width: 375px;
+    //min-width: 375px;
+
+  }
 }

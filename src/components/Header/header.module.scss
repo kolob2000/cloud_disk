@@ -1,8 +1,11 @@
+@import "../../scss/variables";
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 30px 0;
+  padding: 0 15px;
 
 }
 
@@ -20,7 +23,11 @@
       font-weight: 700;
       font-size: 18px;
       line-height: 24px;
-      color: #03045E
+      color: $main_blue
+    }
+
+    @media screen and (max-width: 788px) {
+      display: none;
     }
   }
 
@@ -30,8 +37,8 @@
     align-items: center;
     justify-content: center;
     padding: 9px 33px;
-    background: #03045E;
-    border: 2px solid #03045E;
+    background: $main_blue;
+    border: 2px solid $main_blue;
     border-radius: 5px;
     font-weight: 700;
     font-size: 18px;
@@ -41,7 +48,7 @@
 
     &:hover {
       background: #fff;
-      color: #03045E;
+      color: $main_blue;
     }
   }
 }

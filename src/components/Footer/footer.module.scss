@@ -1,11 +1,14 @@
-.footer{
+@import "../../scss/variables";
+
+.footer {
   display: flex;
   justify-content: center;
   background: #FFFFFF;
   width: 100%;
 
 }
-.footer__wrapper{
+
+.footer__wrapper {
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -13,5 +16,9 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #03045E;
+  color: $main_blue;
+  @media screen and (max-width: 788px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
