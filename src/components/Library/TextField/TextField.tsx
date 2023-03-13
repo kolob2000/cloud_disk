@@ -7,15 +7,16 @@ export const TextField: React.FC<ITextProps> = (props) => {
     const {
         value, setValue, borderSize,
         borderStyle, borderColor, color,
-        size, placeholder,
-        onKeyDown, onBlur, className
+        size, placeholder, isFocus,
+        onKeyDown, onBlur, className,
+        typeField
     } = props
     const height = size === 'large' ? 40 : size === 'small' ? 24 : 32
     const radius = size === 'large' ? 8 : size === 'small' ? 4 : 6
     const padding = size === 'large' ? '7px 11px' : size === 'small' ? '0px 7px' : '4px 11px'
     const inlineStyles: React.CSSProperties = {
         display: 'block',
-        color: color ?? '$main_blue',
+        color: color ?? 'var(--main_color)',
         border: `${borderSize ? borderSize : 1}px
                         ${borderStyle ? borderStyle : 'solid'}
                         ${borderColor ? borderColor : '#d9d9d9'}`,
@@ -25,13 +26,13 @@ export const TextField: React.FC<ITextProps> = (props) => {
     }
     const classes: (string | undefined)[] = [style.textInput]
     useEffect(() => {
-        inputRef.current?.focus()
-    })
+        isFocus && inputRef.current?.focus()
+    }, [])
     return (
         <>
             <input
                 ref={inputRef}
-                type={"text"}
+                type={typeField ?? "text"}
                 value={value}
                 placeholder={placeholder ?? 'Text'}
                 onBlur={onBlur}
@@ -44,3 +45,4 @@ export const TextField: React.FC<ITextProps> = (props) => {
     );
 };
 
+React.memo(TextField);

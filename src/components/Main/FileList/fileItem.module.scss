@@ -10,17 +10,63 @@
   }
 
   span {
- font-size: 35px;
+    font-size: 35px;
+  }
+    padding: 8px 0;
+
+  border-radius: 3px;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.08);
   }
 }
 
-.file__item {
-  display: flex;
-  gap: 15px;
-  align-items: baseline;
+.file_list {
 
+}
+
+.file_item {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 12px 0;
+  transition: background-color 0.1s ease-in;
+  border-radius: 3px;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+}
+
+.file {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--main_color);
+  fill: var(--main_color);
+  transition: all 0.3s ease-in;
+
+
+}
+
+.checkbox {
+  position: relative;
+  margin-left: 15px;
+
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
 
   input[type='checkbox'] {
+    position: absolute;
+    z-index: -1;
     opacity: 0;
     //display: none;
     width: 0;
@@ -33,46 +79,38 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    min-width: 24px;
     width: 24px;
     height: 24px;
-    border: 3px solid $main_blue;
+    border: 3px solid var(--main_color);
     border-radius: 3px;
   }
 
   input:checked + label:after {
-    position: absolute;
     display: flex;
     content: '\2713';
     justify-content: center;
     align-items: center;
+    min-width: 24px;
     width: 24px;
     height: 24px;
     font-size: 20px !important;
     font-weight: 600;
-    color: #ffffff !important;
-    background: $main_blue;
+    color: var(--file_checked) !important;
+    background: var(--main_color);
     border-radius: 3px;
   }
 }
 
-.file {
-  display: flex;
-  padding: 5px 8px;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 10px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  text-align: center;
-  color: rgba(3, 4, 94);
-  fill: rgba(3, 4, 94);
-  transition: all 0.3s ease-in;
+.icon {
+  min-width: 24px;
+  width: 24px;
+}
 
-  &:hover {
-    color: rgba(3, 4, 94, 0.7);
-    fill: rgba(3, 4, 94, 0.7);
-    background: darken(#F7F8FD, 5%);
-    border-radius: 5px;
-  }
+.file_name {
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px;
 }

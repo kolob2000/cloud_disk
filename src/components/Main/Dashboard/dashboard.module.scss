@@ -5,7 +5,8 @@
   display: flex;
   gap: 20px;
   align-items: baseline;
-  background: darken(#F7F8FD, 3%);
+  background: var(--dashboard_background);
+  box-shadow: 0 0 6px 2px rgb(0 0 0 / 16%);
   padding: 15px 15px;
   border-radius: 3px;
   margin-bottom: 20px;
@@ -15,11 +16,11 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: $main_blue;
+  fill: var(--main_color);
   transition: 0.3s ease-in fill;
 
   &:hover {
-    fill: rgba(3, 4, 94, 0.7);
+    fill: var(--button_hover);
   }
 }
 
@@ -45,11 +46,11 @@ button {
   border: none !important;
   font-size: 22px;
   font-weight: 700;
-  color: $main_blue;
+  color: var(--main_color);
   transition: color 0.3s ease-in;
 }
 
 .file-name-button:hover {
-  color: rgba(3, 4, 94, 0.66);
+  color: var(--button_hover);
 
 }

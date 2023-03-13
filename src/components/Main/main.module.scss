@@ -2,5 +2,102 @@
 
 .main {
   padding: 15px;
+  //outline: 1px solid black;
   flex-grow: 1;
+}
+
+.logout_main {
+
+}
+
+.promo_height {
+  background: url("../../../public/img/promo.png") no-repeat right 50%;
+  background-size: 55%;
+  max-height: 750px;
+  min-height: 750px;
+
+  @media (max-width: 992px) {
+    background-position: right 57%;
+  }
+  @media (max-width: 768px) {
+    background-position: right 57%;
+  }
+
+
+  @media (max-width: 576px) {
+    background-size: 100%;
+    background-position: center 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+
+.promo {
+  padding-top: 14%;
+  width: 37%;
+  @media (max-width: 1200px) {
+    padding-top: 14%;
+
+    width: 43%;
+  }
+  @media (max-width: 992px) {
+    padding-top: 6%;
+    width: 70%;
+    //padding-top: 18%;
+    //width: 44%;
+  }
+  @media (max-width: 768px) {
+    padding-top: 7%;
+    width: 80%;
+  }
+
+  @media (max-width: 576px) {
+    padding-top: 90%;
+    width: 100%;
+  }
+
+  h1 {
+
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    text-align: inherit;
+    @media (max-width: 576px) {
+      font-size: 28px;
+      line-height: 35px;
+      text-align: center;
+    }
+  }
+
+  p {
+    margin-top: 18px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    @media (max-width: 576px) {
+      text-align: justify;
+
+    }
+  }
+}
+
+.promo_button {
+  margin-top: 45px;
+  background: var(--promo_button);
+  color: var(--promo_button_color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 41px !important;
+  padding-right: 41px !important;
+  transition: background-color 0.3s ease-in;
+  @media (max-width: 576px) {
+    margin: 45px auto 0;
+  }
+
+  &:hover {
+    background: var(--promo_button_hover);
+  }
+
 }

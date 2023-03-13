@@ -1,0 +1,45 @@
+$bc-github: #4078c0;
+$bc-github-1: #4078c0;
+$bc-github-2: #6cc644;
+$bc-github-3: #bd2c00;
+$bc-github-4: #c9510c;
+$bc-github-5: #6e5494;
+$bc-github-6: #fafafa;
+$bc-github-7: #f5f5f5;
+$bc-github-8: #333;
+
+https://www.microsoft.com/en-us/surface
+$bc-microsoft-surface: #0078d7;
+$bc-microsoft-surface-1: #0078d7;
+$bc-microsoft-surface-2: #eeeeee;
+$bc-microsoft-surface-3: #737373;
+$bc-microsoft-surface-4: #505050;
+$bc-microsoft-surface-5: #000000;
+
+$bc-mailchimp: #239ab9;
+$bc-mailchimp-1: #239ab9;
+$bc-mailchimp-2: #52bad5;
+$bc-mailchimp-3: #6dc5dc;
+$bc-mailchimp-4: #373737;
+$bc-mailchimp-5: #5d5c5d;
+$bc-mailchimp-6: #b7b7b7;
+
+$bc-login-radius: #008ecf;
+$bc-login-radius-1: #008ecf;
+$bc-login-radius-2: #09263c;
+$bc-login-radius-3: #020b13;
+$bc-login-radius-4: #e3f1f8;
+$bc-login-radius-5: #073857;
+
+$bc-gibson: #000000;
+$bc-gibson-1: #000000;
+$bc-gibson-2: #436f8e;
+$bc-gibson-3: #887d59;
+$bc-gibson-4: #8f9696;
+
+$bc-ghost: #212425;
+$bc-ghost-1: #212425;
+$bc-ghost-2: #718087;
+$bc-ghost-3: #5ba4e5;
+$bc-ghost-4: #9fbb58;
+$bc-ghost-5: #e9e8dd;

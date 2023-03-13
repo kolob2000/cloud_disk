@@ -6,6 +6,7 @@ import {fetchFiles} from "../../../features/cloud/cloudThunks";
 import {useAppDispatch, useAppSelector} from "../../../app/hooks";
 import Back from "./Back";
 import {setParent} from "../../../features/cloud";
+import style from './fileItem.module.scss'
 
 export const FileList = () => {
     const parentId: number | null = useAppSelector(state => state.cloud.parent)
@@ -24,12 +25,12 @@ export const FileList = () => {
         }
     },)
     useEffect(() => {
-        dispatch(fetchFiles(1))
+        dispatch(fetchFiles())
     }, [dispatch])
 
 
     return (
-        <div>
+        <div className={style.file_list}>
             {parentId ?
                 <Back/>
                 : ''}

@@ -1,0 +1,56 @@
+.login_form {
+  display: flex;
+  padding: 32px 17px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 16%);
+  gap: 15px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 530px;
+  background: var(--microsoft_taupe);
+
+  div:has(>svg) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.login_button {
+  background: var(--microsoft_original_blue);
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 16%);
+  color: var(--login_button_color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  transition: background 0.3s ease-in;
+
+
+  &:hover {
+    background: var(--login_button_color_hover);
+
+  }
+}
+
+.input_field {
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 16%), inset 0 1px 1px rgb(0 0 0 / 10%);
+  //1px 1px 1px -1px rgba(34, 60, 80, 0.6) inset,
+  //-1px -1px 1px -1px rgba(34, 60, 80, 0.6) inset;
+  color: var(--microsoft_original_dark_gray);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.links {
+  a {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--login_link_color);
+    transition: color .3s ease-in;
+
+    &:hover {
+      color: #333333;
+      //color: var(--login_link_color_hover);
+    }
+  }
+}

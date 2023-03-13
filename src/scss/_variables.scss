@@ -1,2 +1,51 @@
-$main_blue: #03045E;
-$main_blue_focus: #03045E8f;
+:root {
+  //--white: #ffffff;
+  //--main_color: #03045E;
+  //--main_color_focus: #03045E8f;
+  //--button_hover: #03045EB2;
+  //--main_background: #F7F8FD;
+  //--dashboard_background: #ebedfa;
+  //--file_background_hover: #e3e6f8;
+  //--file_checked: var(--white);
+  //--footer_background: var(--white);
+  //--login_button_color: var(--white);
+  ///////////////////////////////////
+  --black: #000000;
+  --white: #ffffff;
+  --git_grey: #333333;
+
+  --microsoft_original_beigh: #FDDCC6;
+  --microsoft_original_blue: #0067b8;
+  --microsoft_original_blue_d5: #00599f;
+  --microsoft_original_light_grey: #f2f2f2;
+  --microsoft_original_dark_gray: #2f2f2f;
+
+  --microsoft_blue: #0078d7;
+  --microsoft_ligth_blue: rgba(0, 120, 215, 0.1);
+  --microsoft_light_grey: #eeeeee;
+  --microsoft_middle_grey: #e2e2e2;
+  --microsoft_middle_taupe: #737373;
+  --microsoft_taupe: #505050;
+
+  --main_font_color: var(--git_grey);
+  --main_color: var(--microsoft_taupe);
+  --main_color_focus: var(--microsoft_ligth_blue);
+  --button_hover: var(--microsoft_original_dark_gray);
+  --menu_link_hover: var(--microsoft_original_dark_gray);
+  --main_background: var(--microsoft_original_light_grey);
+  --dashboard_background: var(--microsoft_middle_grey);
+  --file_background_hover: #e3e6f8;
+  --file_checked: var(--white);
+  --footer_background: var(--white);
+  --login_button_color: var(--microsoft_light_grey);
+  --login_button_color_hover: var(--microsoft_original_blue_d5);
+  --login_link_color: var(--microsoft_light_grey);
+  --login_link_color_hover: var(--microsoft_original_dark_gray);
+  --logo_login_fill: var(--microsoft_middle_grey);
+  --promo_button: var(--microsoft_original_blue);
+  --promo_button_hover: var(--microsoft_original_blue_d5);
+  --promo_button_color: var(--microsoft_light_grey);
+  --header_logo: var(--git_grey);
+  --header_logo_cover: var(--microsoft_taupe);
+}
+

@@ -2,9 +2,11 @@
 
 .textInput {
   width: 100%;
-  background: #F7F8FD;
+  background: var(--main_background);
+
 }
 
 .textInput:focus {
-  border-color: $main_blue_focus !important;
+  //border-color: var(--main_color_focus) !important;
+      box-shadow: 0 0 6px 1px var(--microsoft_ligth_blue);
 }

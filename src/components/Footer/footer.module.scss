@@ -3,7 +3,7 @@
 .footer {
   display: flex;
   justify-content: center;
-  background: #FFFFFF;
+  background: var(--footer_background);
   width: 100%;
 
 }
@@ -16,7 +16,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: $main_blue;
+  color: var(--main_color);
   @media screen and (max-width: 788px) {
     flex-direction: column;
     gap: 10px;

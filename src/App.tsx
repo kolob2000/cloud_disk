@@ -6,11 +6,16 @@ import {Route, Routes, useLocation} from "react-router-dom";
 import {About, Contacts, Prices, Services} from "./components/Pages";
 import {resetCheckedFiles} from "./features/cloud";
 import {useAppDispatch} from "./app/hooks";
+import {authFetch} from "./features/user/userThunks";
 
 
 function App() {
     const location = useLocation()
     const dispatch = useAppDispatch()
+    useEffect(() => {
+
+        dispatch(authFetch({}))
+    }, [])
     useEffect(() => {
         dispatch(resetCheckedFiles())
     }, [location.pathname])

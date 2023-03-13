@@ -5,15 +5,19 @@ import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./app/store";
+import {createGlobalStyle} from "styled-components";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
+
 root.render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>
-    </Provider>
+    <>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App/>
+            </BrowserRouter>
+        </Provider>
+    </>
 );
 

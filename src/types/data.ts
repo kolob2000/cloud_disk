@@ -1,5 +1,4 @@
 import React from "react";
-import {type} from "os";
 
 export interface IFile {
     id: number,
@@ -24,17 +23,30 @@ export interface ICloudState {
     error: string | null
 }
 
-export interface IUser {
-    id: number,
-    uuid: string,
-    email: string,
-    token: string,
-    disk_quota: number
+export interface ICommonState {
+    isVisible: boolean,
+    isProfileVisible: boolean
+}
+
+export interface IUserState {
+    id: number
+    uuid: string
+    email: string
+    firstName?: string
+    lastName?: string
+    diskQuota: number
+    isActive: boolean
+    is_auth: boolean
 }
 
 export interface IIconProps {
-    icon: string
+    icon?: string
+    width?: number
+    height?: number
+    fill?: string
+    hover?: string
 }
+
 
 export type idxArray = Array<number>
 
@@ -47,8 +59,8 @@ export interface IHeaders {
     mode?: string // no-cors, *cors, same-origin
     cache?: string // *default, no-cache, reload, force-cache, only-if-cachedcredentials = 'same-origin' // include, *same-origin, omit
     credentials?: string // include, *same-origin, omit
-    headers?: {
-        'Content-Type': string
+    headers: {
+        'Content-Type'?: string
         // 'Content-Type': 'application/x-www-form-urlencoded',
     }
     redirect?: string // manual, *follow, error
@@ -63,23 +75,42 @@ export class Headers implements IHeaders {
     mode = 'cors'
     cache = 'no-cache'
     credentials = 'same-origin'
-    headers = {
-        'Content-Type': 'application/json'
+    headers: {
+        'Content-Type'?: string,
+        'Authorization': string
     }
-    redirect = 'follow'
-    referrerPolicy = 'no-referrer'
-    body = ''
 
-    constructor(method: string) {
+    body: any
+
+    constructor(method: string, contentType: string | boolean = true) {
         this.method = method
+        if (typeof contentType === 'string') {
+            this.headers = {
+                "Content-Type": contentType,
+                'Authorization': ''
+
+            }
+        } else if (contentType) {
+            this.headers = {
+                "Content-Type": 'application/json',
+                'Authorization': ''
+
+            }
+        } else {
+            this.headers = {
+                'Authorization': ''
+            }
+        }
 
     }
+
+
 }
 
 export interface ITextProps {
 
     value: string,
-    setValue: React.Dispatch<React.SetStateAction<string>>
+    setValue: React.Dispatch<React.SetStateAction<any>>
     onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>
     onBlur?: React.FocusEventHandler<HTMLInputElement>
     placeholder?: string
@@ -90,20 +121,61 @@ export interface ITextProps {
     color?: string
     className?: string
     isVisible?: boolean
+    isFocus?: boolean
+    typeField?: string
 
 
 }
 
-export interface IBottonProps {
+export interface IButtonProps {
     // children: string | JSX.Element | JSX.Element[] | (() => JSX.Element) | React.ReactNode
     children?: React.ReactNode
     title?: string
     onClick?: React.MouseEventHandler<HTMLButtonElement>
     className?: string
-    size?: 'large' | 'small' | 'default'
+    size?: 'x-large' | 'large' | 'small' | 'default'
     borderSize?: 'none' | number
     borderStyle?: 'solid' | 'dash'
     borderColor?: string
 
 
 }
+
+export interface IMobileNavProps {
+    children?: React.ReactNode
+    isVisible: boolean
+    setVisible: React.Dispatch<React.SetStateAction<boolean>> | ((isVisible: boolean) => void)
+}
+
+export interface IMenuLink {
+    name: string
+    path?: string
+}
+
+export interface ILoginForm {
+    email: string
+    password: string
+}
+
+export interface ILoginFormProps {
+    className?: string
+    formRef?: React.MutableRefObject<null>
+
+}
+
+export interface IUploadFormProps {
+    isVisible: boolean
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export interface IProfilePopupProps {
+    className?: string
+
+}
+
+
+
+
+
+
+

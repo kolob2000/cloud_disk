@@ -1,15 +1,15 @@
 import React from 'react';
-import {IBottonProps} from "../../../types";
+import {IButtonProps} from "../../../types";
 import style from './button.module.scss'
 
-export const Button: React.FC<IBottonProps> = (props) => {
+export const Button: React.FC<IButtonProps> = (props) => {
     const {
         children, onClick, className,
         borderSize, borderStyle,
         borderColor,
         size
     } = props
-    const height = size === 'large' ? 40 : size === 'small' ? 24 : 32
+    const height = size === 'x-large'? 53: size === 'large' ? 40 : size === 'small' ? 24 : 32
     const radius = size === 'large' ? 8 : size === 'small' ? 4 : 6
     const padding = size === 'large' ? '7px 11px' : size === 'small' ? '0px 7px' : '4px 11px'
     const inlineStyles: React.CSSProperties = {

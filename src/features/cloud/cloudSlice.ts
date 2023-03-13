@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {createFolder, deleteFiles, fetchFiles} from "./cloudThunks";
+import {createFolder, deleteFiles, fetchFiles, fileUploader} from "./cloudThunks";
 import {ICloudState} from "../../types";
 import {PayloadAction} from "@reduxjs/toolkit";
 
@@ -16,7 +16,7 @@ export const cloudSlice = createSlice({
     initialState,
     reducers: {
         setParent(state, action: PayloadAction<{ id: number | null }>) {
-            const currentParent = state.files.find(item => item.id === action.payload.id)
+            const currentParent = state.files?.find(item => item.id === action.payload.id)
             if (currentParent !== undefined) {
                 const prevParent = state.files.find(item => item.id === currentParent.parent_id)
                 if (prevParent) {
@@ -62,7 +62,10 @@ export const cloudSlice = createSlice({
         builder.addCase(createFolder.pending, (state) => {
             state.loading = true
         })
-        builder.addCase(createFolder.fulfilled, (state, action) => {
+        builder.addCase(createFolder.fulfilled, (state) => {
+            state.loading = false
+        })
+        builder.addCase(fileUploader.fulfilled, (state) => {
             state.loading = false
         })
     },

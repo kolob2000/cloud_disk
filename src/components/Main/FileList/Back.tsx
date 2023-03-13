@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./fileItem.module.scss";
 import {Link} from "react-router-dom";
-import {Icon} from "../../Icon";
+import {Icon} from "../../Library";
 import {useAppSelector} from "../../../app/hooks";
 
 const Back: React.FC = () => {
