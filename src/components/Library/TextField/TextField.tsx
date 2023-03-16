@@ -9,11 +9,11 @@ export const TextField: React.FC<ITextProps> = (props) => {
         borderStyle, borderColor, color,
         size, placeholder, isFocus,
         onKeyDown, onBlur, className,
-        typeField
+        typeField, id
     } = props
-    const height = size === 'large' ? 40 : size === 'small' ? 24 : 32
-    const radius = size === 'large' ? 8 : size === 'small' ? 4 : 6
-    const padding = size === 'large' ? '7px 11px' : size === 'small' ? '0px 7px' : '4px 11px'
+    const height = size === 'x-large' ? 53 : size === 'large' ? 40 : size === 'small' ? 24 : 32
+    const radius = size === 'x-large' ? 8 : size === 'large' ? 8 : size === 'small' ? 4 : 6
+    const padding = size === 'x-large' ? '7px 11px' : size === 'large' ? '7px 11px' : size === 'small' ? '0px 7px' : '4px 11px'
     const inlineStyles: React.CSSProperties = {
         display: 'block',
         color: color ?? 'var(--main_color)',
@@ -31,6 +31,7 @@ export const TextField: React.FC<ITextProps> = (props) => {
     return (
         <>
             <input
+                id={id ? `${id}` : undefined}
                 ref={inputRef}
                 type={typeField ?? "text"}
                 value={value}

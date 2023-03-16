@@ -14,7 +14,7 @@ export const loginFetch = createAsyncThunk<IUserState, ILoginForm, {
 }>(
     'user/loginFetch',
     async (form, thunkAPI) => {
-        const response = await fetch('http://192.168.0.195:3002/api/users/signin',
+        const response = await fetch('http://192.168.0.193:3002/api/users/signin',
             {
                 method: 'POST',
                 mode: 'cors',
@@ -42,7 +42,7 @@ export const loginFetch = createAsyncThunk<IUserState, ILoginForm, {
 export const authFetch = createAsyncThunk<IUserState, {}, { dispatch: AppDispatch, rejectValue: string }>(
     'user/authFetch',
     async (_, thunkAPI) => {
-        const response = await fetch('http://192.168.0.195:3002/api/users/auth', {
+        const response = await fetch('http://192.168.0.193:3002/api/users/auth', {
             method: 'POST',
             mode: 'cors',
             headers: {

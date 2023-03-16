@@ -8,6 +8,8 @@
   margin: 30px 0;
   padding: 0 15px;
   @media screen and (max-width: 788px) {
+    margin: 17px 0;
+    padding: 0 32px;
     //justify-content: center;
   }
 
@@ -91,9 +93,22 @@
   display: flex;
   order: 2;
   align-items: center;
-  gap: 40px;
+  @media screen and (max-width: 991px) {
+    width: 33px;
+    margin-left: 16px;
+    button {
+      div {
+        svg {
+          fill: var(--main_color) !important;
 
+          &:hover {
+            fill: var(--button_hover) !important;
+          }
 
+        }
+      }
+    }
+  }
 }
 
 .login_form {
@@ -108,7 +123,7 @@
 
 .login_background {
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   z-index: 1;
   background: rgba(0, 0, 0, 1%);

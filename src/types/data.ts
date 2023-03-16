@@ -110,11 +110,12 @@ export class Headers implements IHeaders {
 export interface ITextProps {
 
     value: string,
+    id?: undefined | string,
     setValue: React.Dispatch<React.SetStateAction<any>>
     onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>
     onBlur?: React.FocusEventHandler<HTMLInputElement>
     placeholder?: string
-    size?: 'large' | 'small' | 'default'
+    size?: 'x-large' | 'large' | 'small' | 'default'
     borderSize?: 'none' | number
     borderStyle?: 'solid' | 'dash'
     borderColor?: string

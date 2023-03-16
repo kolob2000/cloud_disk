@@ -7,6 +7,7 @@ import {Icon} from "../Icon";
 import {ILoginForm, ILoginFormProps} from "../../../types";
 import {useAppDispatch} from "../../../app/hooks";
 import {loginFetch} from "../../../features/user/userThunks";
+import {setIsProfileVisible} from "../../../features/common";
 
 
 export const LoginForm: React.FC<ILoginFormProps> = (props) => {
@@ -48,8 +49,8 @@ export const LoginForm: React.FC<ILoginFormProps> = (props) => {
                 size={'large'}>Войти
             </Button>
             <div className={style.links} style={{display: 'flex', justifyContent: 'space-between'}}>
-                <Link to={'/forget'}>Забыли пароль?</Link>
-                <Link to={'/signup'}>Регистрация</Link>
+                <Link onClick={() => dispatch(setIsProfileVisible(false))} to={'/forget'}>Забыли пароль?</Link>
+                <Link onClick={() => dispatch(setIsProfileVisible(false))} to={'/signup'}>Регистрация</Link>
             </div>
         </div>
     )

@@ -13,6 +13,7 @@
   --black: #000000;
   --white: #ffffff;
   --git_grey: #333333;
+  --red: #F93236;
 
   --microsoft_original_beigh: #FDDCC6;
   --microsoft_original_blue: #0067b8;
@@ -47,5 +48,8 @@
   --promo_button_color: var(--microsoft_light_grey);
   --header_logo: var(--git_grey);
   --header_logo_cover: var(--microsoft_taupe);
+  --registration_button: var(--microsoft_original_blue);
+  --registration_button_hover: var(--microsoft_original_blue_d5);
+  --error: var(--red);
 }
 

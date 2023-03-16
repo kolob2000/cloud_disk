@@ -29,3 +29,19 @@
   }
 
 }
+
+.active {
+  color: var(--menu_link_hover) !important;
+
+  &:after {
+    transform: scale(1) !important;
+    width: 100% !important;
+    //position: absolute;
+    //left: 0;
+    //bottom: -2px;
+    //content: '';
+    //width: 105%;
+    //background: var(--microsoft_original_blue);
+    //height: 2px;
+  }
+}

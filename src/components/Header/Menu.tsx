@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './header.module.scss'
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {setIsVisible} from "../../features/common";
 import {IMenuLink} from "../../types";
@@ -22,7 +22,7 @@ export const Menu = () => {
         <>
             <ul className={style.header__menu}>
                 {menuLinks.map((item, index) => {
-                    return <li key={index}><Link onClick={handleClick} to={item.path!}>{item.name}</Link></li>
+                    return <li key={index}><NavLink onClick={handleClick} to={item.path!}>{item.name}</NavLink></li>
                 })}
             </ul>
         </>

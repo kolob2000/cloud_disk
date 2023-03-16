@@ -5,8 +5,8 @@ export const Footer = () => {
     return (
         <div className={style.footer}>
             <div className={style.footer__wrapper + ' wrapper'}>
-                <span>© Copyright Ⓒ Sheild. All Rights Reserved.</span>
-                <span>Privacy Policy | Tearms Condition</span>
+                <span>Ⓒ CloudHit, 2023.| Создано Kollabiz.</span>
+                <span>Лицензия. | Соглашение.</span>
             </div>
 
         </div>

@@ -32,6 +32,10 @@ export const userSlice = createSlice({
         builder.addCase(authFetch.fulfilled, (state, action) => {
             return {...action.payload, is_auth: true}
         })
+        builder.addCase(authFetch.rejected, (state, action) => {
+            console.log('Unauthorized')
+        })
+
     }
 
 })

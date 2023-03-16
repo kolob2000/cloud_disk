@@ -16,6 +16,7 @@
   max-height: 750px;
   min-height: 750px;
 
+
   @media (max-width: 992px) {
     background-position: right 57%;
   }
@@ -27,8 +28,9 @@
   @media (max-width: 576px) {
     background-size: 100%;
     background-position: center 0;
-    padding-left: 15px;
-    padding-right: 15px;
+    //padding-left: 15px;
+    //padding-right: 15px;
+    margin: 0 22px;
   }
 
 }
@@ -76,7 +78,7 @@
     font-size: 18px;
     line-height: 28px;
     @media (max-width: 576px) {
-      text-align: justify;
+      text-align: center;
 
     }
   }
@@ -93,7 +95,7 @@
   padding-right: 41px !important;
   transition: background-color 0.3s ease-in;
   @media (max-width: 576px) {
-    margin: 45px auto 0;
+    margin: 14px auto 0;
   }
 
   &:hover {
