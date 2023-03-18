@@ -14,49 +14,57 @@ export const loginFetch = createAsyncThunk<IUserState, ILoginForm, {
 }>(
     'user/loginFetch',
     async (form, thunkAPI) => {
-        const response = await fetch('http://192.168.0.193:3002/api/users/signin',
-            {
-                method: 'POST',
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                credentials: "same-origin",
-                body: JSON.stringify(form)
+        try {
+            const response = await fetch('http://192.168.0.193:3002/api/users/signin',
+                {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: "same-origin",
+                    body: JSON.stringify(form)
 
+                }
+            )
+            if (!response.ok) {
+                return thunkAPI.rejectWithValue('Server error.')
             }
-        )
-        if (!response.ok) {
-            return thunkAPI.rejectWithValue('Server error.')
+            const result = await response.json()
+            cookies.set('token', result.token)
+            thunkAPI.dispatch(setIsProfileVisible(false))
+            thunkAPI.dispatch(fetchFiles())
+            return (({is_active, disk_quota, token, ...rest}) => ({
+                isActive: is_active,
+                diskQuota: disk_quota, ...rest
+            }))(result)
+        } catch (e) {
+            console.log(e)
         }
-        const result = await response.json()
-        cookies.set('token', result.token)
-        thunkAPI.dispatch(setIsProfileVisible(false))
-        thunkAPI.dispatch(fetchFiles())
-        return (({is_active, disk_quota, token, ...rest}) => ({
-            isActive: is_active,
-            diskQuota: disk_quota, ...rest
-        }))(result)
     })
 
 export const authFetch = createAsyncThunk<IUserState, {}, { dispatch: AppDispatch, rejectValue: string }>(
     'user/authFetch',
     async (_, thunkAPI) => {
-        const response = await fetch('http://192.168.0.193:3002/api/users/auth', {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Authorization': cookies.get('token')
+        try {
+            const response = await fetch('http://192.168.0.193:3002/api/users/auth', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Authorization': cookies.get('token')
+                }
+            })
+            if (!response.ok) {
+                thunkAPI.dispatch(logout())
+                return thunkAPI.rejectWithValue('Server error.')
             }
-        })
-        if (!response.ok) {
-            thunkAPI.dispatch(logout())
-            return thunkAPI.rejectWithValue('Server error.')
+            const result = await response.json()
+            return (({is_active, disk_quota, token, ...rest}) => ({
+                isActive: is_active,
+                diskQuota: disk_quota, ...rest
+            }))(result)
+        } catch (e) {
+            console.log(e)
         }
-        const result = await response.json()
-        return (({is_active, disk_quota, token, ...rest}) => ({
-            isActive: is_active,
-            diskQuota: disk_quota, ...rest
-        }))(result)
     }
 )

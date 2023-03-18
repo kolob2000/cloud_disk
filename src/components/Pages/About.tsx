@@ -1,8 +1,12 @@
 import React from 'react';
 import style from "../Main/main.module.scss";
-import {LoginForm} from "../Library/LoginForm";
+import {useSearchParams, useLocation, useParams} from "react-router-dom";
 
 export const About = () => {
+
+
+
+
 
     return (
         <div className={style.main + ' wrapper'}>

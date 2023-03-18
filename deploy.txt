@@ -37,3 +37,28 @@ PasswordAuthentication yes -> PasswordAuthentication no
 // все безопасность настроена можете попробывать войти под root
 
 
+установка nginx - инструкция на сайте
+установка certbot инструкция на сайте
+устанвка pm2 инструкция на сайте
+pm2 serve <path> <port> --spa для запуска single page aplication
+pm2 startup - не забываем добавить строку которую нам напишет startup
+pm2 save - добавляем наши приложения в автозапуск
+
+установка postgesql - инструкция на сайте
+
+настройка postgresql
+
+1. sudo passwd postgres
+2. su - postgres
+3. psql
+4. \password postgres
+5. create user cloud with password 'Kolob_!1983';
+6. create database express;
+7. \q
+8. psql -h localhost express postgres
+9. GRANT ALL ON SCHEMA public to cloud;
+10. psql -h localhost express cloud
+
+
+
+
