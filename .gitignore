@@ -107,3 +107,4 @@ fabric.properties
 combinations.js
 
 temp
+.env
