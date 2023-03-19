@@ -1,0 +1,42 @@
+.main {
+  padding-top: 50px;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  color: var(--yellow);
+  text-align: center;
+  margin-top: 18px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+.text {
+  max-width: 530px;
+  text-align: center;
+  margin-top: 18px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.button {
+  background: var(--microsoft_original_blue);
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.16);
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  color: var(--login_button_color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  transition: background 0.3s ease-in;
+
+  &:hover {
+    background: var(--login_button_color_hover);
+  }
+}

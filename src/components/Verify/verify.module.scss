@@ -1,0 +1,27 @@
+.verify {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  text-align: center;
+  margin-top: 18px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+.error {
+  color: var(--red);
+}
+
+.success {
+  color: var(--green);
+}
+
+.warning {
+  color: var(--yellow);
+}

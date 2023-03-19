@@ -1,13 +1,11 @@
 import React, {useEffect} from 'react';
-import logo from './logo.svg';
 import './App.scss';
-import {Header, Main, Footer, FileList, Signup} from "./components";
+import {Header, Main, Footer, Signup, Verify} from "./components";
 import {Route, Routes, useLocation} from "react-router-dom";
-import {About, Contacts, Prices, Services} from "./components/Pages";
+import {About, Contacts, Prices, Services} from "./components";
 import {resetCheckedFiles} from "./features/cloud";
 import {useAppDispatch, useAppSelector} from "./app/hooks";
 import {authFetch} from "./features/user/userThunks";
-import {Verify} from "./components/Pages/Verify";
 
 
 function App() {
