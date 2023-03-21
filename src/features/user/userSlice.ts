@@ -30,8 +30,6 @@ export const userSlice = createSlice({
             return {...action.payload, is_auth: true}
         })
         builder.addCase(authFetch.fulfilled, (state, action) => {
-            console.log(action.payload)
-            console.log(!!action.payload)
             return {...action.payload, is_auth: true}
         })
         builder.addCase(authFetch.rejected, (state, action) => {

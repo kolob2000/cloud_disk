@@ -21,6 +21,8 @@ function App() {
         dispatch(resetCheckedFiles())
     }, [location.pathname])
 
+
+
     return (
         <div className={'app'}>
             <Header/>
