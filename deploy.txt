@@ -54,10 +54,11 @@ pm2 save - добавляем наши приложения в автозапу�
 4. \password postgres
 5. create user cloud with password 'Kolob_!1983';
 6. create database express;
+7. grant all privileges on database express to cloud;
 7. \q
 8. psql -h localhost express postgres
 9. GRANT ALL ON SCHEMA public to cloud;
-10. psql -h localhost express cloud
+10.  psql -h localhost express cloud
 
 
 

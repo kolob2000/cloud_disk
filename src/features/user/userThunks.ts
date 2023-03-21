@@ -15,7 +15,7 @@ export const loginFetch = createAsyncThunk<IUserState, ILoginForm, {
     'user/loginFetch',
     async (form, thunkAPI) => {
         try {
-            const response = await fetch('http://192.168.0.193:3002/api/users/signin',
+            const response = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/users/signin`,
                 {
                     method: 'POST',
                     mode: 'cors',
@@ -43,11 +43,11 @@ export const loginFetch = createAsyncThunk<IUserState, ILoginForm, {
         }
     })
 
-export const authFetch = createAsyncThunk<IUserState, {}, { dispatch: AppDispatch, rejectValue: string }>(
+export const authFetch = createAsyncThunk<IUserState, undefined, { dispatch: AppDispatch, rejectValue: string }>(
     'user/authFetch',
     async (_, thunkAPI) => {
         try {
-            const response = await fetch('http://192.168.0.193:3002/api/users/auth', {
+            const response = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/users/auth`, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
@@ -64,6 +64,7 @@ export const authFetch = createAsyncThunk<IUserState, {}, { dispatch: AppDispatc
                 diskQuota: disk_quota, ...rest
             }))(result)
         } catch (e) {
+            thunkAPI.dispatch(logout())
             console.log(e)
         }
     }

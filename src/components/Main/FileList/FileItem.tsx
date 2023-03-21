@@ -16,7 +16,7 @@ export const FileItem: React.FC<IFile> = (props) => {
     }
     const handleDownload = async (id: number, fileName: string) => {
         try {
-            const response = await fetch(`http://192.168.0.193:3002/api/cloud/${id}`,
+            const response = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/cloud/${id}`,
                 {
                     method: 'GET',
                     headers: {

@@ -7,7 +7,7 @@ export const ConfirmRequired = () => {
     const handleClick = async () => {
         try {
             const cookies = new Cookies()
-            const result = await fetch('http://localhost:3002/api/users/repeat', {
+            const result = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/users/repeat`, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {

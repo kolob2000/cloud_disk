@@ -9,7 +9,7 @@ export const fetchFiles = createAsyncThunk(
     'cloud/fetchFiles',
     async () => {
         try {
-            const result = await fetch('http://192.168.0.193:3002/api/cloud', {
+            const result = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/cloud`, {
                 headers: {
                     'Authorization': cookie.get('token'),
                 }
@@ -29,7 +29,7 @@ export const deleteFiles = createAsyncThunk<void, number[], { dispatch: AppDispa
             const headers = new Headers('DELETE')
             headers.body = JSON.stringify(arg)
             headers.headers['Authorization'] = cookie.get('token')
-            await fetch(`http://192.168.0.193:3002/api/cloud`, headers as RequestInit)
+            await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/cloud`, headers as RequestInit)
             thunkAPI.dispatch(fetchFiles())
         } catch (e) {
             console.log(e)
@@ -46,7 +46,7 @@ export const createFolder = createAsyncThunk<void,
         const headers = new Headers('POST')
         headers.body = JSON.stringify({parent: arg.parent_id, name: arg.name})
         headers.headers['Authorization'] = cookie.get('token')
-        const response = await fetch(`http://192.168.0.193:3002/api/cloud/`, headers as RequestInit)
+        const response = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/cloud/`, headers as RequestInit)
         if (!response.ok) {
             return thunkAPI.rejectWithValue('Server error.')
         }
@@ -63,7 +63,7 @@ export const fileUploader = createAsyncThunk<void, FormData, { rejectValue: stri
         headers.headers['Authorization'] = cookie.get('token')
         headers.body = files
 
-        const response = await fetch(`http://192.168.0.193:3002/api/cloud/upload`, {
+        const response = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/cloud/upload`, {
             method: 'POST',
             body: files,
             headers: {

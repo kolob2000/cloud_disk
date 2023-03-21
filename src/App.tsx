@@ -10,11 +10,12 @@ import {authFetch} from "./features/user/userThunks";
 
 function App() {
     const location = useLocation()
+    // const str = `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}`
     const dispatch = useAppDispatch()
     const isAuth = useAppSelector(state => state.user.is_auth)
     useEffect(() => {
 
-        dispatch(authFetch({}))
+        dispatch(authFetch())
     }, [])
     useEffect(() => {
         dispatch(resetCheckedFiles())

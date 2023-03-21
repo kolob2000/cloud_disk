@@ -22,7 +22,7 @@ export const RegisterForm = () => {
                 } else if (!regPass.test(form.password)) {
                     setError('Некорректный пароль.')
                 } else {
-                    const response = await fetch('http://192.168.0.193:3002/api/users/signup', {
+                    const response = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/users/signup`, {
                         method: 'POST',
                         mode: 'cors',
                         headers: {

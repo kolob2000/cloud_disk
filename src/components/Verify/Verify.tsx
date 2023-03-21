@@ -5,6 +5,7 @@ import {Loader} from "../Library"
 import {useAppDispatch, useAppSelector} from "../../app/hooks"
 import {setIsProfileVisible} from "../../features/common";
 import {SuccessVerify} from "./SuccessVerify";
+import {authFetch} from "../../features/user/userThunks";
 
 export const Verify = () => {
     const dispatch = useAppDispatch()
@@ -19,7 +20,7 @@ export const Verify = () => {
         if (!token) navigate('/')
     }, [token])
     useEffect(() => {
-        fetch('http://192.168.0.193:3002/api/users/verify', {
+        fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_DOMAIN}/${process.env.REACT_APP_API_VER}/users/verify`, {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -48,6 +49,7 @@ export const Verify = () => {
                         </>)
                         break
                     case 'Success':
+                        dispatch(authFetch())
                         if (isAuth) {
                             setLoading(false)
                             navigate('/')
