@@ -2,7 +2,6 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 import {AppDispatch} from "../../app/store";
 import {Headers} from "../../types";
 import Cookies from 'universal-cookie/es6'
-import axios from "axios"
 
 const cookie = new Cookies()
 export const fetchFiles = createAsyncThunk(

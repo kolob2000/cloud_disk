@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {FileItem} from "./FileItem";
 import {useLocation, Location} from "react-router-dom";
 import {IFile} from "../../../types";
@@ -7,12 +7,14 @@ import {useAppDispatch, useAppSelector} from "../../../app/hooks";
 import Back from "./Back";
 import {setParent} from "../../../features/cloud";
 import style from './fileItem.module.scss'
+import {Loader} from "../../Library";
 
 export const FileList = () => {
     const parentId: number | null = useAppSelector(state => state.cloud.parent)
     const filesTree: Array<IFile> = useAppSelector(state => state.cloud.files)
     const location: Location = useLocation()
     const dispatch = useAppDispatch()
+    const isLoading = useAppSelector(state => state.cloud.loading)
 
     useEffect(() => {
         if (location.pathname === '/') {
@@ -31,6 +33,7 @@ export const FileList = () => {
 
     return (
         <div className={style.file_list}>
+            {isLoading && <div className={style.loader}><Loader/></div>}
             {parentId ?
                 <Back/>
                 : ''}
