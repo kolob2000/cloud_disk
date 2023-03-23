@@ -23,13 +23,14 @@ export const Main = () => {
                 <div className={style.promo_height}>
 
                     <div className={style.promo}>
-                        <h1>Work at the speed
-                            of thought</h1>
-                        <p>Tools, tutorials, design and innovation experts,
-                            all in one place! The most intuitive way to
-                            imagine your next user experience.</p>
-                        <Button borderColor={'transparent'} size={'x-large'} className={style.promo_button}>Get
-                            started</Button>
+                        <h1>Работай со скоростью мысли</h1>
+                        <p>Надежность, конфиденциальность и безопасность. Cloudhit отличное место для обмена и хранения
+                            ваших файлов и медиа контента.</p>
+                        <Button borderColor={'transparent'}
+                                size={'x-large'}
+                                className={style.promo_button}>
+                            Попробовать
+                        </Button>
                     </div>
                 </div>
 

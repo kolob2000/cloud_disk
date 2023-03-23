@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {FileItem} from "./FileItem";
 import {useLocation, Location} from "react-router-dom";
 import {IFile} from "../../../types";
@@ -16,9 +16,8 @@ export const FileList = () => {
     const location: Location = useLocation()
     const dispatch = useAppDispatch()
     const isLoading = useAppSelector(state => state.cloud.loading)
-    const subscribe = useCallback(async () => {
+    const [reopen, setReopen] = useState(false)
 
-    }, [uuid])
 
     useEffect(() => {
         const eventSource = new EventSource(`${process.env.REACT_APP_PROTOCOL}://` +
@@ -26,14 +25,17 @@ export const FileList = () => {
             {withCredentials: true})
 
         eventSource.onmessage = event => {
-
             if (JSON.parse(event.data) === uuid) {
                 dispatch(fetchFiles())
             }
         }
+        eventSource.onerror = event => {
+            eventSource.close()
+            setReopen(state => !state)
+        }
         return () => eventSource.close()
 
-    }, [uuid])
+    }, [uuid, reopen])
     useEffect(() => {
         if (location.pathname === '/') {
             dispatch(setParent({id: null}))

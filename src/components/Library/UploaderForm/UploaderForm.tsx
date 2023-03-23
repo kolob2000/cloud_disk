@@ -13,7 +13,6 @@ export const  UploaderForm: React.FC<IUploadFormProps> = (props) => {
             for (const i in Array.from(files)) {
                 data.append(`file_${i}`, files[i], files[i].name)
             }
-            console.log(data.get('file_0'))
             data.append('parent', JSON.stringify(parent))
             dispatch(fileUploader(data))
         }

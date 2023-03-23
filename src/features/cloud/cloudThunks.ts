@@ -70,7 +70,6 @@ export const fileUploader = createAsyncThunk<void, FormData, { rejectValue: stri
             }
         })
         const res = response.json()
-        console.log(res)
         if (!response.status) {
             return thunkAPI.rejectWithValue('Server error.')
         }
