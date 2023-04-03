@@ -2,7 +2,6 @@
 
 .main {
   padding: 15px;
-  //outline: 1px solid black;
   flex-grow: 1;
 }
 
@@ -38,6 +37,9 @@
 .promo {
   padding-top: 14%;
   width: 37%;
+  span{
+    color: var(--green);
+  }
   @media (max-width: 1200px) {
     padding-top: 14%;
 

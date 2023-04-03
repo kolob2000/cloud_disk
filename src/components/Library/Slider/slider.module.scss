@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  align-self: center;
+  border-radius: 50%;
+
+  &:hover {
+    background: var(--microsoft_middle_grey);
+    backdrop-filter: blur(13px);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.icon_prev {
+  left: -25px;
+
+}
+
+.icon_next {
+  right: -25px;
+}

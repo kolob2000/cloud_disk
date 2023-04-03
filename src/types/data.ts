@@ -45,6 +45,7 @@ export interface IIconProps {
     height?: number
     fill?: string
     hover?: string
+    className?: string
 }
 
 
@@ -172,6 +173,11 @@ export interface IUploadFormProps {
 export interface IProfilePopupProps {
     className?: string
 
+}
+
+export interface IPropsSlider {
+    children?: React.ReactNode
+    className?: string
 }
 
 
